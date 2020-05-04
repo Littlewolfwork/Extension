@@ -1,0 +1,10 @@
+body
+{
+  min-width: 350px;
+  font-size: 13px;
+  background-color: #f8f6f2;
+}
+
+.clear-button {
+    margin:auto;
+}
