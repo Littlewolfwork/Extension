@@ -8,3 +8,6 @@ body
 .clear-button {
     margin:auto;
 }
+ul {
+    list-style-type: none;
+}

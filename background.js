@@ -5,7 +5,6 @@ chrome.contextMenus.create({
 
         var storage = chrome.storage.sync;
         storage.get("tasks",function(items){
-            //console.log(items);
             if(items.tasks){
                 var tasks = items.tasks;
             }
@@ -13,12 +12,12 @@ chrome.contextMenus.create({
                 var tasks = new Array();
             }
             
-            var today = new Date();
-            var new_task = new Object();
-            new_task.date = today.getDate()+"."+(parseInt(today.getMonth())+1)+"." + today.getFullYear();
-            new_task.time = checkTime(today.getHours())+":"+ checkTime(today.getMinutes());
-            new_task.task = info.selectionText;
-            tasks[tasks.length] = new_task;
+            var currentDate = new Date();
+            var newTask = new Object();
+            newTask.date = currentDate.getDate()+"."+(parseInt(currentDate.getMonth())+1)+"." + currentDate.getFullYear();
+            newTask.time = checkTime(currentDate.getHours())+":"+ checkTime(currentDate.getMinutes());
+            newTask.task = info.selectionText;
+            tasks[tasks.length] = newTask;
             storage.set({
                 tasks:tasks
             });
