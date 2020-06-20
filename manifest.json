@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Task Notes",
-    "version": "1.2.0.24",
+    "version": "1.2.0.29",
     "permissions" : ["contextMenus","storage"],
     "icons" : {
       "16" : "image/icon-16.png",
