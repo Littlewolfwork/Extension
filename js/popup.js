@@ -53,3 +53,11 @@ $("ul").on("click", ".task-edit", function(e){
     console.log('editing!!!');
     $('#task-form-container').css("display","block");
   });
+
+$('.button-cancel').click(function(e){
+    $('#task-form-container').css("display","none");
+});
+
+$('.button-ok').click(function(e){
+    $('#task-form-container').css("display","none");
+});

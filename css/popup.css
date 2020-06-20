@@ -14,6 +14,7 @@ ul {
 
 .task-delete {
   /* прописать цетровку по горизонтали */
+  vertical-align:middle;
 }
 
 .task-delete:hover {
@@ -23,8 +24,8 @@ ul {
 
 #task-form-container {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 15px;
+  left: 10px;
   z-index: 9999;
   display: none;
   width: 100%;
