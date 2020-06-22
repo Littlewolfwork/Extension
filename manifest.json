@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
     "name": "Task Notes",
-    "version": "1.2.1.7",
-    "permissions" : ["contextMenus","storage"],
+    "version": "1.2.1.26",
+    "permissions" : ["contextMenus","storage","activeTab"],
     "icons" : {
       "16" : "image/icon-16.png",
       "128" : "image/icon-128.png"
@@ -15,6 +15,10 @@
     "background" : {
       "scripts" : ["js/background.js"],
       "persistent" : true
-    }
-
+    },
+    "content_scripts": [{
+      "matches": ["<all_urls>"],
+      "js": ["js/content_script.js"],
+      "run_at": "document_start"
+    }]
   }
