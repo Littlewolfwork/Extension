@@ -8,7 +8,8 @@ $(function(){
               for(var i in currentTasks){
                   let add_html = '<li id="li_task'+i+'"><b><span class="date">'+currentTasks[i].date+
                   '</span> <span class="time">'+currentTasks[i].time+
-                  '</span></b> <span class="task">'+currentTasks[i].task+
+                  '</span></b> <span class="task">'+currentTasks[i].task+'</span> '+
+                  '<span class="responsible">'+currentTasks[i].responsible+'</span>'+
                   '<img src="/image/edit.png" alt="Редактировать" class="task-edit" id="task_edit'+i+'">'+
                   '<img src="/image/del.png" alt="Удалить" class="task-delete" id="task_del'+i+'"></li>';
                   $("ul").append(add_html);

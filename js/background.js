@@ -32,7 +32,17 @@ chrome.contextMenus.create({
 */
 
 function getResponsibleTask(str){
-    return "";
+    if (str.includes('@')){
+        strArr = str.split(' ');
+        returnArr = strArr.filter(function(strItem) {
+            return strItem.includes('@');
+          });
+          return returnArr[0].slice(1);
+    }
+    else{
+        return "";
+    }
+
 }
 
 function checkTime(i){
