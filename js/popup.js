@@ -1,23 +1,31 @@
-$(function(){
+function viewTasks(mode = 'list'){
     var storage = chrome.storage.sync;
     storage.get("tasks",function(items){
-       // console.log(items);
+        // console.log(items);
         if(items.tasks){
             currentTasks = items.tasks;       
             if(currentTasks.length >0){
-              for(var i in currentTasks){
-                  let add_html = '<li id="li_task'+i+'"><b><span class="date">'+currentTasks[i].date+
-                  '</span> <span class="time">'+currentTasks[i].time+
-                  '</span></b> <span class="task">'+currentTasks[i].task+'</span> '+
-                  '<span class="responsible">'+currentTasks[i].responsible+'</span>'+
-                  '<img src="/image/edit.png" alt="Редактировать" class="task-edit" id="task_edit'+i+'">'+
-                  '<img src="/image/del.png" alt="Удалить" class="task-delete" id="task_del'+i+'"></li>';
-                  $("ul").append(add_html);
-              }
+                for(var i in currentTasks){
+                    editBlock = '<img src="/image/edit.png" alt="Редактировать" class="task-edit" id="task_edit'+i+'">';
+                    delBlock = '<img src="/image/del.png" alt="Удалить" class="task-delete" id="task_del'+i+'">';
+                    let add_html = '<div id="li_task'+i+'"><b><span class="date">'+currentTasks[i].date+
+                    '</span> <span class="time">'+currentTasks[i].time+
+                    '</span></b> <span class="task">'+currentTasks[i].task+'</span> '+
+                    '<span class="responsible">'+currentTasks[i].responsible+'</span>'+editBlock+' '+delBlock +  '</div>';
+                    $(".tasksContainer").append(add_html);
+                }
+                $('.tasksContainer').slick({
+
+                });
             }
         }
-  });
+    });
+}
+
+$(function(){
+    viewTasks();
 });
+
 
 
 function windowEditTask(){
@@ -96,3 +104,16 @@ $('.button-ok').click(function(e){
   
 
 });
+
+$('#viewList').click(function(e){
+    $('.tasksContainer').slick('unslick');
+ 
+});
+
+$('#viewCarts').click(function(e){
+    $('.tasksContainer').slick({
+
+    });
+ 
+});
+
